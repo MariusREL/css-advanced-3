@@ -19,11 +19,24 @@ html{
     scroll-behavior: smooth;
 }
 
+.spacetaker {
+    height: 20svh;
+    position: relative;
+    z-index: 0;
+}
 header{
-    height: 12svh;
+    height: 300px;
+    width: 100%;
+    position:absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 1;
     background-color: var(--dark-sky-color);
 }
 main{
+    position: relative;
+    z-index: 1;
+    border-radius: 20% 20% 0 0;
     height: 40svh;
     background-color: var(--sky-color);
 }
@@ -37,32 +50,102 @@ header .star1,
 header .star2 {
     position: absolute;
     height: 25px;
-    filter: brightness(0) saturate(100%) invert(100%);
 }
 
-/* Example: randomize top/left for each star instance */
-header .star  { top: 12px; left: 18px; }
-header .star1 { top: 25px; left: 60px; }
-header .star2 { top: 8px;  left: 120px; }
-header .star3 { top: 30px; left: 200px; }
-header .star4 { top: 5px;  left: 250px; }
-header .star5 { top: 20px; left: 320px; }
-header .star6 { top: 15px; left: 400px; }
-header .star7 { top: 28px; left: 470px; }
-header .star8 {
-    top: 12px;
-    left: 520px;
+header .star  { top: 37px; left: 2vw; }
+header .star1 { top: 25px; left: 8vw; }
+header .star2 { top: 59px; left: 15vw; }
+header .star3 { top: 32px; left: 22vw; }
+header .star4 { top: 48px; left: 30vw; }
+header .star5 { top: 95px; left: 38vw; }
+header .star6 { top: 90px; left: 47vw; }
+header .star7 { top: 65px; left: 56vw; }
+header .star8 { top: 75px; left: 65vw; }
+header .star9 { top: 78px; left: 78vw; }
+header .star10 { top: 41px; left: 90vw; }
+
+.starBlink1 {
+    animation: twinkle 5s infinite alternate;
 }
-header .star9 {
-    top: 50px;
-    left: 580px;
+.starBlink2 {
+    animation: twinkle 2s infinite alternate;
 }
-header .star10 {
-    top: 8px;
-    left: 630px;
-}
-header .star7 {
-    top: 28px;
-    left: 470px;
+.starBlink3 {
+    animation: twinkle 10s infinite alternate;
 }
 
+@keyframes twinkle {
+    0%,
+    100% {
+        filter: drop-shadow(0 0 0px white) brightness(1);
+        transform: scale(1.03);
+    }
+    20%,
+    80% {
+        filter: drop-shadow(0 0 10px white) brightness(1.5);
+        transform: scale(1.06);
+    }
+    40%,
+    60% {
+        filter: drop-shadow(0 0 25px white) brightness(2);
+        transform: scale(1.1);
+    }
+    50% {
+        filter: drop-shadow(0 0 40px white) brightness(2.5);
+        transform: scale(1.13);
+    }
+}
+
+.cloud {
+    position: absolute;
+    width: 300px;
+    height: auto;
+}
+
+.cloud > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block; 
+}
+
+@keyframes cloudDrift1 {
+    0%   { left: 10vw; }
+    30%  { left: 20vw; }
+    60%  { left: 5vw; }
+    100% { left: 10vw; }
+}
+
+
+@keyframes cloudDrift2 {
+    0%   { left: 40vw; }
+    20%  { left: 45vw; }
+    50%  { left: 38vw; }
+    70%  { left: 50vw; }
+    100% { left: 40vw; }
+}
+
+@keyframes cloudDrift3 {
+    0%   { left: 75vw; }
+    15%  { left: 80vw; }
+    35%  { left: 70vw; }
+    60%  { left: 85vw; }
+    80%  { left: 72vw; }
+    100% { left: 75vw; }
+}
+
+.cloud1 {
+    top: -100px;
+    left: 10vw;
+    animation: cloudDrift1 18s linear infinite;
+}
+.cloud2 {
+    top: -60px;
+    left: 40vw;
+    animation: cloudDrift2 14s ease-in-out infinite;
+}
+.cloud3 {
+    top: -130px;
+    left: 75vw;
+    animation: cloudDrift3 10s ease-in-out infinite;
+}
