@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Varela&display=swap');
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+:root {
+    --main-font: "Bebas Neue", sans-serif;
+    --sky-color: #0096c7;
+    --txt-color: #ffe8d6;
+    --grass-color: #55a630;
+    --dark-sky-color: #30343f;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    height: 12svh;
+    background-color: var(--dark-sky-color);
+}
+main{
+    height: 40svh;
+    background-color: var(--sky-color);
+}
+footer{
+    height: 50vh;
+    background-color: var(--grass-color);
+}
+
+header .star,
+header .star1,
+header .star2 {
+    position: absolute;
+    height: 25px;
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+/* Example: randomize top/left for each star instance */
+header .star  { top: 12px; left: 18px; }
+header .star1 { top: 25px; left: 60px; }
+header .star2 { top: 8px;  left: 120px; }
+header .star3 { top: 30px; left: 200px; }
+header .star4 { top: 5px;  left: 250px; }
+header .star5 { top: 20px; left: 320px; }
+header .star6 { top: 15px; left: 400px; }
+header .star7 { top: 28px; left: 470px; }
+header .star8 {
+    top: 12px;
+    left: 520px;
+}
+header .star9 {
+    top: 50px;
+    left: 580px;
+}
+header .star10 {
+    top: 8px;
+    left: 630px;
+}
+header .star7 {
+    top: 28px;
+    left: 470px;
+}
+
